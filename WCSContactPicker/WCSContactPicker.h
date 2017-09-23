@@ -9,8 +9,8 @@
 //  http://www.wrightscs.com, http://www.wrightscsapps.com
 //
 
-@import Contacts;
-@import ContactsUI;
+#import <Contacts/Contacts.h>
+#import <ContactsUI/ContactsUI.h>
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 

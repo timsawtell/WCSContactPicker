@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactCell : UITableViewCell
+@interface WCSContactCell : UITableViewCell
 
 @property (strong, nonatomic) UIImage * thumbnail;
 @property (strong, nonatomic) NSString * displayName;

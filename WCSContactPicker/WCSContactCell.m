@@ -9,21 +9,22 @@
 //  http://www.wrightscs.com, http://www.wrightscsapps.com
 //
 
-#import "ContactCell.h"
+#import "WCSContactCell.h"
 
-@interface ContactCell ()
+@interface WCSContactCell ()
 @property (nonatomic, weak) IBOutlet UIImageView * imageThumbnail;
 @property (nonatomic, weak) IBOutlet UILabel * labelDisplayName, * labelPhoneNumber, * labelEmailAddress;
 
 @end
 
-@implementation ContactCell
+@implementation WCSContactCell
 
 - (void)awakeFromNib
 {
     _labelDisplayName.textColor = [UIColor blackColor];
     _labelPhoneNumber.textColor = [UIColor grayColor];
     _labelEmailAddress.textColor = [UIColor lightGrayColor];
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

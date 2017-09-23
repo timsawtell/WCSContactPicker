@@ -9,7 +9,7 @@
 //  http://www.wrightscs.com, http://www.wrightscsapps.com
 //
 
-#import "ContactCell.h"
+#import "WCSContactCell.h"
 #import "WCSContactPicker.h"
 
 @interface WCSContactPicker () {
@@ -243,10 +243,12 @@
 {
     if ( _contacts.count )
     {
-        static NSString *CellIdentifier = @"ContactCell";
-        ContactCell * cell = (ContactCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        NSArray  *nib = [[NSBundle  mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        static NSString *CellIdentifier = @"WCSContactCell";
+        WCSContactCell *cell = (WCSContactCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WCSContactCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
         
         Contact * _contact = [self personFromContact:(CNContact*)_contacts[indexPath.row]];
         cell.thumbnail = _contact.thumb;
